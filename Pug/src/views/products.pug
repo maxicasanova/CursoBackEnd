@@ -1,0 +1,11 @@
+extends ./layout/layout.pug
+
+block content
+    div.container.d-flex.justify-content-center.flex-wrap
+        if list.length
+            each element in list
+                div.card.p-3.m-2( style="width: 18rem;")
+                    +product(element.thumbnail, element.title, element.price)
+                    a( href='/api/productos/'+element.id).btn.btn-primary Ver producto
+        else
+            p No hay productos.

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <%- include('../partials/nav'); %>
+    <div class="container-fluid">
+        <%- include('../partials/product', {thumbnail:prod.thumbnail, title:prod.title, price:prod.price}) %>
+        <button class="btn btn-primary">Agregar al carrito</button>
+    </div>
+    <%- include('../partials/scripts'); %>
+</body>
+</html>

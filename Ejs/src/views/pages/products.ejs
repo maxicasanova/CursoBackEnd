@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <%- include('../partials/nav'); %>
+    <div class="container d-flex justify-content-center flex-wrap">
+        <% if (list.length) { %>
+            <% list.forEach((list) => { %>
+                <div class="card p-3 m-2" style="width: 18rem;">
+                    <%- include('../partials/product', {thumbnail:list.thumbnail, title:list.title, price:list.price}) %>
+                    <% let dir = '/api/productos/'+list.id %> 
+                    <a href=<%= dir %> class="btn btn-primary">Ver producto</a>
+                </div>
+            <% }) %>
+        <% } else { %> 
+            <p>No hay productos.</p>
+        <% } %> 
+    </div>
+    <%- include('../partials/scripts'); %>
+</body>
+</html>
